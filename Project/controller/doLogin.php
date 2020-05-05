@@ -30,8 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $row = $res->fetch_assoc();
             if( password_verify($password,$row["password"]) )
             {
-                $_SESSION["username"] = $row["firstName"];
-                $_SESSION["email"] = $row["email"];
+                $_SESSION["user"] = $row;
 
                 if( isset($_POST["remember"]) )
                 {

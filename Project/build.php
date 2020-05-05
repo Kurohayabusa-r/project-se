@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +14,18 @@
 </head>
 <body>
     <header>
-        <div class="card-body">
-            <a href="/project/index"><h1>Toko Komputer A</h1></a>
-        </div>
-        <!-- <h1>Build a PC</h1> -->
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md4 mb-3 bg-white border-bottom box-shadow">
+        <a class="text-dark" href="/project/index.php"><h5 class="my-0 mr-md-auto font-weight-normal">Compumeum</h5></a>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="index.php">Home</a>
+            <?php if( isset($_SESSION["user"]) ): ?>
+            <a class="btn btn-outline-danger" href="./controller/doLogout.php">Logout</a>
+            <?php else: ?>
+                <a class="p-2 text-dark" href="./login.php">Login</a>
+                <a class="p-2 text-dark" href="./register.php">Sign Up</a>
+            <?php endif; ?>
+        </nav>
+    </div>
     </header>
     <section class="py-5 bg-primary">
     <div class="container">
@@ -28,10 +36,13 @@
               <div class="card shadow-lg">
                 <div class="card-body">
                   <div class="filter-sidebar ">
-                    <h3>Build a PC</h3>
-    <a href="./recommendation-by-game">Recommendation by Games</a>
+                      <header class="card-header">                          
+                          <h3>Build a PC</h3>
+                          <a href="./recommendation-by-game">Recommendation by Games</a>
+                      </header>
 
     <div>
+        <form action="./order.php" method="post">
         <table>
             <thead>
                 <tr>
@@ -46,7 +57,7 @@
                     <div class="form-group">
                     <td scope="row" width="20%">Processor</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
+                        <select class="form-control" name="processor" style="max-width:90%;">
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -63,11 +74,9 @@
                     <td scope="row" width="20%">CPU Cooler</td>
                     <td>
                         <!-- <a href="./products/cpu-cooler">Choose a CPU Cooler</a> -->
-                        <select class="form-control" id="processor" style="max-width:90%;">
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
+                        <select class="form-control" name="cpu_cooler" style="max-width:90%;">
+                            <option value="AirCooling">Air Cooling</option>
+                            <option value="LiquidCooling">Liquid Cooling</option>
                         </select>
                     </td>
                     </div>
@@ -76,11 +85,11 @@
                     <div class="form-group">
                     <td scope="row" width="14%">Power Supply</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
+                        <select class="form-control" name="psu" style="max-width:90%;">
+                            <option value="500w">500W</option>
+                            <option value="650w">650W</option>
+                            <option value="1000w">1000W</option>
+                            <option value="2000w">2000W</option>
                         </select>
                     </td>
                     </div>
@@ -89,7 +98,7 @@
                     <div class="form-group">
                     <td scope="row" width="14%">Motherboard</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
+                        <select class="form-control" name="motherboard" style="max-width:90%;">
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -102,7 +111,7 @@
                     <div class="form-group">
                     <td scope="row" width="14%">RAM</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
+                        <select class="form-control" name="ram" style="max-width:90%;">
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -115,7 +124,7 @@
                     <div class="form-group">
                     <td scope="row" width="14%">Graphics Card</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
+                        <select class="form-control" name="gpu" style="max-width:90%;">
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -128,7 +137,7 @@
                     <div class="form-group">
                     <td scope="row" width="14%">Storage</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
+                        <select class="form-control" name="storage" style="max-width:90%;">
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -141,7 +150,7 @@
                     <div class="form-group">
                     <td scope="row" width="14%">Case</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
+                        <select class="form-control" name="case" style="max-width:90%;">
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -154,7 +163,7 @@
                     <div class="form-group">
                     <td scope="row" width="14%">Operating System</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
+                        <select class="form-control" name="os" style="max-width:90%;">
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -167,7 +176,7 @@
                     <div class="form-group">
                     <td scope="row" width="14%">Case Accessories</td>
                     <td>
-                        <select class="form-control" id="processor" style="max-width:90%;">
+                        <select class="form-control" name="accessories" style="max-width:90%;">
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -185,6 +194,7 @@
                 </tr>
             </tbody>
         </table>
+        </form>
     </div>
                   </div>
                 </div>
@@ -198,7 +208,7 @@
     <footer>
     <article class="bg-secondary">
         <div class="card-body text-center">
-            <p class="h5 text-white mt-4"><a class="text-white" href="/project/index">Toko Komputer A</a></p>
+            <p class="h5 text-white mt-4"><a class="text-white" href="/project/index.php">Compumeum</a></p>
             <p class="text-white">© 2020 All rights reserved.</p>
         </div>
     </article>

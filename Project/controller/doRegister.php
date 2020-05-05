@@ -6,11 +6,11 @@ require "../database/db.php";
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    $email = htmlspecialchars($_POST["email"]);
+    $email = $_POST["email"];
     $firstName = htmlspecialchars($_POST["firstName"]);
     $lastName = htmlspecialchars($_POST["lastName"]);
     $gender = $_POST["gender"];
-    $city = htmlspecialchars($_POST["city"]);
+    $city = $_POST["city"];
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirmPassword"];
 
@@ -37,9 +37,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $_SESSION["error"] = "Confirm password does not match";
     }
 
-    $view = "SELECT * FROM users WHERE email = '$email'";
-    $result = $conn->query($view);
-
+    $view = "SELECT * FROM users WHERE email = '?'";
+    $stmt = $conn->prepare($view);
+    $stmt->bind_param("s", $email);
+    $result = $stmt->execute();
+    $stmt->free_result();
+    $stmt->close();
+    
     if($result->num_rows == 0)
     {
         $hashPass = password_hash($password, PASSWORD_BCRYPT);
@@ -51,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         if( $res )
         {
             $_SESSION["success"] = "Sucessfully registered";
-            header("Location: ../index.php");
+            header("Location: ../register.php");
         }
         else{
             if( $res && !isset($_SESSION["error"]) )

@@ -153,7 +153,7 @@ session_start();
 </head>
 <body>
   <?php
-		if( isset($_SESSION["username"]) )
+		if( isset($_SESSION["user"]) )
 		{
       header("Location: ./index.php");
       exit;
@@ -161,9 +161,8 @@ session_start();
   ?>
   <header>
         <div class="card-body">
-            <a class="text-white" href="/project/index"><h1>Toko Komputer A</h1></a>
+            <a class="text-white" href="/project/index.php"><h1>Compumeum</h1></a>
         </div>
-        <!-- <h1>Build a PC</h1> -->
   </header>
   <div class="container">
     <div class="row">
@@ -188,7 +187,7 @@ session_start();
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
               <hr class="my-4">
-              <a class="btn btn-lg btn-google btn-block text-uppercase" href="./register">Sign Up</a>
+              <a class="btn btn-lg btn-google btn-block text-uppercase" href="./register.php">Sign Up</a>
             </form>
             <div class="errorMessage">
 	            	<!-- Show Error Message -->
@@ -211,7 +210,7 @@ session_start();
   <footer>
   <article class="bg-secondary">  
     <div class="card-body text-center">
-        <p class="h5 text-white mt-4"><a class="text-white" href="/project/index">Toko Komputer A</a></p>
+        <p class="h5 text-white mt-4"><a class="text-white" href="/project/index.php">Compumeum</a></p>
         <p class="text-white">© 2020 All rights reserved.</p>
     </div>
     </article>

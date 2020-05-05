@@ -21,7 +21,7 @@ session_start();
 </head>
 <body>
     <?php
-        if( isset($_SESSION["username"]) )
+        if( isset($_SESSION["user"]) )
         {
             header("Location: ./index.php");
             exit;
@@ -29,20 +29,17 @@ session_start();
     ?>
     <header>
         <div class="card-body">
-            <a class="text-white" href="/project/index"><h1>Toko Komputer A</h1></a>
+            <a class="text-white" href="/project/index.php"><h1>Compumeum</h1></a>
         </div>
-        <!-- <h1>Build a PC</h1> -->
     </header>
     <div class="container">
-    <!-- <br>  <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
-    <hr> -->
     <br>
     
     <div class="row justify-content-center">
     <div class="col-md-6">
     <div class="card">
     <header class="card-header">
-        <a href="./login" class="float-right btn btn-outline-primary mt-1">Log In</a>
+        <a href="./login.php" class="float-right btn btn-outline-primary mt-1">Log In</a>
         <h4 class="card-title mt-2">Sign Up</h4>
     </header>
     <article class="card-body">
@@ -121,7 +118,7 @@ session_start();
         <?php }?>
     </div>
     </article> <!-- card-body end .// -->
-    <div class="border-top card-body text-center">Have an account? <a href="./test">Log In</a></div>
+    <div class="border-top card-body text-center">Have an account? <a href="./login.php">Log In</a></div>
     </div> <!-- card.// -->
     </div> <!-- col.//-->
     
@@ -135,7 +132,7 @@ session_start();
     <footer>
     <article class="bg-secondary">  
         <div class="card-body text-center">
-            <p class="h5 text-white mt-4"><a class="text-white" href="/project/index">Toko Komputer A</a></p>
+            <p class="h5 text-white mt-4"><a class="text-white" href="/project/index.php">Compumeum</a></p>
             <p class="text-white">© 2020 All rights reserved.</p>
         </div>
     </article>
