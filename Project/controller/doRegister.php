@@ -40,7 +40,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $view = "SELECT * FROM users WHERE email = '?'";
     $stmt = $conn->prepare($view);
     $stmt->bind_param("s", $email);
-    $result = $stmt->execute();
+    $stmt->execute();
+    $result = $stmt->get_result();
     $stmt->free_result();
     $stmt->close();
     
@@ -48,17 +49,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $hashPass = password_hash($password, PASSWORD_BCRYPT);
 
-        $stmt = $conn->prepare("INSERT INTO users(email,password,firstName,lastName,gender,city) VALUES(?,?,?,?,?,?)");
-        $stmt->bind_param("ssssss", $email, $hashPass, $firstName, $lastName, $gender, $city);
+        $stmt = $conn->prepare("INSERT INTO users(email,firstName,lastName,gender,city,password) VALUES(?,?,?,?,?,?)");
+        $stmt->bind_param("ssssss", $email, $firstName, $lastName, $gender, $city, $hashPass);
         
-        $res = $stmt->execute();
-        if( $res )
+        if( $stmt->execute() )
         {
             $_SESSION["success"] = "Sucessfully registered";
             header("Location: ../register.php");
         }
         else{
-            if( $res && !isset($_SESSION["error"]) )
+            if( !isset($_SESSION["error"]) )
             {
                 $_SESSION["error"] = "Failed to register";
             }  
@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $stmt->close();
     }
     else{
-        if( $result && !isset($_SESSION["error"]) )
+        if( !isset($_SESSION["error"]) )
         {
             $_SESSION["error"] = "Email address already registered";
         }

@@ -47,16 +47,16 @@ session_start();
         <div class="form-row">
             <div class="col form-group">
                 <label>First name </label>   
-                  <input type="text" class="form-control" name="firstName">
+                  <input type="text" class="form-control" name="firstName" required autofocus>
             </div> <!-- form-group end.// -->
             <div class="col form-group">
                 <label>Last name</label>
-                  <input type="text" class="form-control" name="lastName">
+                  <input type="text" class="form-control" name="lastName" required>
             </div> <!-- form-group end.// -->
         </div> <!-- form-row end.// -->
         <div class="form-group">
             <label>Email address</label>
-            <input type="email" class="form-control" name="email">
+            <input type="email" class="form-control" name="email" required>
             <small class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div> <!-- form-group end.// -->
         <div class="form-group">
@@ -72,7 +72,7 @@ session_start();
         <div class="form-row">
             <div class="form-group col-md-6">
               <label>City</label>
-              <input type="text" class="form-control" name="city">
+              <input type="text" class="form-control" name="city" required>
             </div> <!-- form-group end.// -->
             <!-- <div class="form-group col-md-6">
               <label>Country</label>
@@ -88,11 +88,11 @@ session_start();
         </div> <!-- form-row.// -->
         <div class="form-group">
             <label>Create password</label>
-            <input class="form-control" type="password" name="password">
+            <input class="form-control" type="password" name="password" required>
         </div>
         <div class="form-group">
             <label>Confirm password</label>
-            <input class="form-control" type="password" name="confirmPassword">
+            <input class="form-control" type="password" name="confirmPassword" required>
         </div> <!-- form-group end.// -->  
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block"> Sign Up  </button>
