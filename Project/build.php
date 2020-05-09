@@ -121,6 +121,11 @@ session_start();
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
+                    <div id="motherboard_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
@@ -135,6 +140,11 @@ session_start();
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
+                    <div id="ram_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
@@ -149,6 +159,11 @@ session_start();
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
+                    <div id="gpu_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
@@ -163,6 +178,11 @@ session_start();
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
+                    <div id="storage_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
@@ -177,6 +197,11 @@ session_start();
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
+                    <div id="cpu_case_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
@@ -191,6 +216,11 @@ session_start();
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
+                    <div id="os_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
@@ -205,6 +235,11 @@ session_start();
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
+                    <div id="accessories_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="total-price">

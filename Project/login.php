@@ -208,7 +208,7 @@ session_start();
   </div>
 
   <footer>
-  <article class="bg-secondary">  
+  <article class="bg-secondary" style="position: absolute; bottom: 0; width: 100%;">  
     <div class="card-body text-center">
         <p class="h5 text-white mt-4"><a class="text-white" href="/project/index.php">Compumeum</a></p>
         <p class="text-white">© 2020 All rights reserved.</p>

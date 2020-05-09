@@ -57,7 +57,7 @@ session_start();
         <div class="form-group">
             <label>Email address</label>
             <input type="email" class="form-control" name="email" required>
-            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div> <!-- form-group end.// -->
         <div class="form-group">
                 <label class="form-check form-check-inline">
@@ -97,7 +97,7 @@ session_start();
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block"> Sign Up  </button>
         </div> <!-- form-group// -->      
-        <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                          
+        <!-- <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                           -->
     </form>
     <div class="errorMessage">
         <!-- Show Error Message -->
