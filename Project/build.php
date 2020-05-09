@@ -57,16 +57,19 @@ session_start();
                     <div class="form-group">
                     <td scope="row" width="20%">Processor</td>
                     <td>
-                        <select class="form-control" name="processor" style="max-width:90%;">
+                        <select class="form-control" name="processor" style="max-width:90%;" id="processor">
+                            <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
-                    <td scope="row" width="30%">
-                        <?php echo 123456 ?>
-                    </td>
+                    <div id="cpu_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
@@ -74,31 +77,44 @@ session_start();
                     <td scope="row" width="20%">CPU Cooler</td>
                     <td>
                         <!-- <a href="./products/cpu-cooler">Choose a CPU Cooler</a> -->
-                        <select class="form-control" name="cpu_cooler" style="max-width:90%;">
+                        <select class="form-control" name="cpu_cooler" style="max-width:90%;" id="cpu_cooler">
+                            <option value="0">--</option>
                             <option value="AirCooling">Air Cooling</option>
                             <option value="LiquidCooling">Liquid Cooling</option>
                         </select>
                     </td>
+                    <div id="cpu_cooler_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
                     <div class="form-group">
                     <td scope="row" width="14%">Power Supply</td>
                     <td>
-                        <select class="form-control" name="psu" style="max-width:90%;">
+                        <select class="form-control" name="psu" style="max-width:90%;" id="psu">
+                            <option value="0">--</option>
                             <option value="500w">500W</option>
                             <option value="650w">650W</option>
                             <option value="1000w">1000W</option>
                             <option value="2000w">2000W</option>
                         </select>
                     </td>
+                    <div id="psu_price">
+                        <td scope="row" width="30%">
+                            <?= "test" ?>
+                        </td>
+                    </div>
                     </div>
                 </tr>
                 <tr class="components">
                     <div class="form-group">
                     <td scope="row" width="14%">Motherboard</td>
                     <td>
-                        <select class="form-control" name="motherboard" style="max-width:90%;">
+                        <select class="form-control" name="motherboard" style="max-width:90%;" id="motherboard">
+                            <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -111,7 +127,8 @@ session_start();
                     <div class="form-group">
                     <td scope="row" width="14%">RAM</td>
                     <td>
-                        <select class="form-control" name="ram" style="max-width:90%;">
+                        <select class="form-control" name="ram" style="max-width:90%;" id="ram">
+                            <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -124,7 +141,8 @@ session_start();
                     <div class="form-group">
                     <td scope="row" width="14%">Graphics Card</td>
                     <td>
-                        <select class="form-control" name="gpu" style="max-width:90%;">
+                        <select class="form-control" name="gpu" style="max-width:90%;" id="gpu">
+                            <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -137,7 +155,8 @@ session_start();
                     <div class="form-group">
                     <td scope="row" width="14%">Storage</td>
                     <td>
-                        <select class="form-control" name="storage" style="max-width:90%;">
+                        <select class="form-control" name="storage" style="max-width:90%;" id="storage">
+                            <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -150,7 +169,8 @@ session_start();
                     <div class="form-group">
                     <td scope="row" width="14%">Case</td>
                     <td>
-                        <select class="form-control" name="case" style="max-width:90%;">
+                        <select class="form-control" name="case" style="max-width:90%;" id="cpu_case">
+                            <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -163,7 +183,8 @@ session_start();
                     <div class="form-group">
                     <td scope="row" width="14%">Operating System</td>
                     <td>
-                        <select class="form-control" name="os" style="max-width:90%;">
+                        <select class="form-control" name="os" style="max-width:90%;" id="os">
+                            <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -176,7 +197,8 @@ session_start();
                     <div class="form-group">
                     <td scope="row" width="14%">Case Accessories</td>
                     <td>
-                        <select class="form-control" name="accessories" style="max-width:90%;">
+                        <select class="form-control" name="accessories" style="max-width:90%;" id="accessories">
+                            <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
                             <option value="inteli5">Intel i5</option>
                             <option value="amdryzen5">AMD Ryzen 5</option>
@@ -189,11 +211,10 @@ session_start();
                     <td>Total:</td>
                     <td><?php echo $totalPrice ?></td>
                 </tr>
-                <tr>
-                    <td><button type="submit">Order</button></td>
-                </tr>
             </tbody>
         </table>
+            <br>
+            <button type="submit" class="btn" style="width: 200px;">Order</button>
         </form>
     </div>
                   </div>
@@ -213,5 +234,6 @@ session_start();
         </div>
     </article>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
