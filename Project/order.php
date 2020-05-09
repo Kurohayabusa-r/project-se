@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +14,11 @@
 </head>
 <body>
     <?php
+    if( !isset($_SESSION["user"]) ){
+        header("Location: ./login.php");
+        exit;
+    }
+
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $processor = $_POST["processor"];
         $cpu_cooler = $_POST["cpu_cooler"];
