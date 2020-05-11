@@ -15,7 +15,7 @@ session_start();
 <body>
     <header>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md4 mb-3 bg-white border-bottom box-shadow">
-        <a class="card-body text-dark" href="/project/index.php"><h3 class="my-0 mr-md-auto font-weight-normal">Compumeum</h3></a>
+        <a class="card-body text-dark" href="./index.php"><h3 class="my-0 mr-md-auto font-weight-normal">Compumeum</h3></a>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="index.php">Home</a>
             <?php if( isset($_SESSION["user"]) ): ?>
@@ -38,7 +38,7 @@ session_start();
                   <div class="filter-sidebar ">
                       <header class="">                      
                           <h3 class="display-4 text-center">Build a PC</h3>
-                          <a href="./recommendation-by-game"><p class="p-2 text-center text-dark">Recommendation by Games</p></a>
+                          <a href="./game-recommendation.php"><p class="p-2 text-center text-dark">Recommendation by Games</p></a>
                       </header>
                       <hr>
 
@@ -56,7 +56,7 @@ session_start();
             <tbody>
                 <tr class="components">
                     <div class="form-group">
-                    <td scope="row" width="30%">Processor</td>
+                    <td scope="row" width="35%">Processor</td>
                     <td width="40%">
                         <select class="form-control" name="processor" style="max-width:90%;" id="processor">
                             <option value="0">--</option>
@@ -203,7 +203,7 @@ session_start();
     <footer>
     <article class="bg-dark">
         <div class="card-body text-center">
-            <p class="h5 text-white mt-4"><a class="text-white" href="/project/index.php">Compumeum</a></p>
+            <p class="h5 text-white mt-4"><a class="text-white" href="./index.php">Compumeum</a></p>
             <p class="text-white">© 2020 All rights reserved.</p>
         </div>
     </article>

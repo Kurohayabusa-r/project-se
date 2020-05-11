@@ -1,5 +1,6 @@
 <?php
 
+$price["0"] = 0;
 $price["inteli7"] = 6000000;
 $price["inteli5"] = 3500000;
 $price["amdryzen5"] = 3000000;
