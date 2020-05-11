@@ -14,8 +14,8 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <style>
         body {
-        background: #007bff;
-        background: linear-gradient(to right, #0062E6, #33AEFF);
+        background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+        
         }
     </style>
 </head>
@@ -29,7 +29,8 @@ session_start();
     ?>
     <header>
         <div class="card-body">
-            <a class="text-white" href="/project/index.php"><h1>Compumeum</h1></a>
+            <a class="text-white" href="index.php"><h1 class="display-4">Take me back</h1></a>
+            <hr style="background-color: white; width: 80%; margin-top: 30px;">
         </div>
     </header>
     <div class="container">
@@ -40,7 +41,7 @@ session_start();
     <div class="card">
     <header class="card-header">
         <a href="./login.php" class="float-right btn btn-outline-primary mt-1">Log In</a>
-        <h4 class="card-title mt-2">Sign Up</h4>
+        <h4 class="card-title mt-2" style="font-weight: 300">Sign Up</h4>
     </header>
     <article class="card-body">
     <form action="./controller/doRegister.php" method="POST">
@@ -130,9 +131,9 @@ session_start();
     
     <br><br>
     <footer>
-    <article class="bg-secondary">  
+    <article class="">  
         <div class="card-body text-center">
-            <p class="h5 text-white mt-4"><a class="text-white" href="/project/index.php">Compumeum</a></p>
+            <p class="h5 text-white mt-4"><a class="text-white" href="./index.php">Compumeum</a></p>
             <p class="text-white">© 2020 All rights reserved.</p>
         </div>
     </article>

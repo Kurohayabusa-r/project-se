@@ -20,8 +20,8 @@ session_start();
         }
 
         body {
-        background: #007bff;
-        background: linear-gradient(to right, #0062E6, #33AEFF);
+        background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+        
         }
 
         .card-signin {
@@ -161,7 +161,8 @@ session_start();
   ?>
   <header>
         <div class="card-body">
-            <a class="text-white" href="/project/index.php"><h1>Compumeum</h1></a>
+          <a class="text-white" href="index.php"><h1 class="display-4">Take me back</h1></a>
+          <hr style="background-color: white; width: 80%; margin-top: 30px;">
         </div>
   </header>
   <div class="container">
@@ -208,9 +209,9 @@ session_start();
   </div>
 
   <footer>
-  <article class="bg-secondary" style="position: absolute; bottom: 0; width: 100%;">  
+  <article class="" style="position: absolute; bottom: 0; width: 100%;">  
     <div class="card-body text-center">
-        <p class="h5 text-white mt-4"><a class="text-white" href="/project/index.php">Compumeum</a></p>
+        <p class="h5 text-white mt-4"><a class="text-white" href="./index.php">Compumeum</a></p>
         <p class="text-white">© 2020 All rights reserved.</p>
     </div>
     </article>
