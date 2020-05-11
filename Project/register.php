@@ -131,7 +131,8 @@ session_start();
     
     <br><br>
     <footer>
-    <article class="">  
+    <article class="">
+    <hr style="background-color: white; width: 80%; margin-top: 30px;">  
         <div class="card-body text-center">
             <p class="h5 text-white mt-4"><a class="text-white" href="./index.php">Compumeum</a></p>
             <p class="text-white">© 2020 All rights reserved.</p>
