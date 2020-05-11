@@ -15,7 +15,7 @@ session_start();
 <body>
     <header>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md4 mb-3 bg-white border-bottom box-shadow">
-        <a class="text-dark" href="/project/index.php"><h5 class="my-0 mr-md-auto font-weight-normal">Compumeum</h5></a>
+        <a class="card-body text-dark" href="/project/index.php"><h5 class="my-0 mr-md-auto font-weight-normal">Compumeum</h5></a>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="index.php">Home</a>
             <?php if( isset($_SESSION["user"]) ): ?>
@@ -27,7 +27,7 @@ session_start();
         </nav>
     </div>
     </header>
-    <section class="py-5 bg-primary">
+    <section class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-9 mx-auto">
@@ -36,12 +36,13 @@ session_start();
               <div class="card shadow-lg">
                 <div class="card-body">
                   <div class="filter-sidebar ">
-                      <header class="card-header">                          
-                          <h3>Build a PC</h3>
-                          <a href="./recommendation-by-game">Recommendation by Games</a>
+                      <header class="">                      
+                          <h3 class="display-4 text-center">Build a PC</h3>
+                          <a href="./recommendation-by-game"><p class="p-2 text-center text-dark">Recommendation by Games</p></a>
                       </header>
+                      <hr>
 
-    <div>
+    <div id="form">
         <form action="./order.php" method="post">
         <table>
             <thead>
@@ -111,14 +112,14 @@ session_start();
                 </tr>
                 <tr class="components">
                     <div class="form-group">
-                    <td scope="row" width="14%">Motherboard</td>
+                    <td scope="row" width="14%">Motherboard and Case Size</td>
                     <td>
                         <select class="form-control" name="motherboard" style="max-width:90%;" id="motherboard">
                             <option value="0">--</option>
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
+                            <option value="ATX">ATX</option>
+                            <option value="MicroATX">Micro-ATX</option>
+                            <option value="ITX">Mini-ITX</option>
+                            <option value="EATX">E-ATX</option>
                         </select>
                     </td>
                     <div id="motherboard_price">
@@ -134,10 +135,10 @@ session_start();
                     <td>
                         <select class="form-control" name="ram" style="max-width:90%;" id="ram">
                             <option value="0">--</option>
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
+                            <option value="4gb">4GB</option>
+                            <option value="8gb">8GB</option>
+                            <option value="16gb">16GB</option>
+                            <option value="32gb">32GB</option>
                         </select>
                     </td>
                     <div id="ram_price">
@@ -153,10 +154,12 @@ session_start();
                     <td>
                         <select class="form-control" name="gpu" style="max-width:90%;" id="gpu">
                             <option value="0">--</option>
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
+                            <option value="nvidia2060">NVIDIA 2060</option>
+                            <option value="nvidia2070">NVIDIA 2070</option>
+                            <option value="nvidia2080">NVIDIA 2080</option>
+                            <option value="nvidia2080ti">NVIDIA 2080Ti</option>
+                            <option value="radeon5700">Radeon RX5700</option>
+                            <option value="radeon5700xt">Radeon RX5700XT</option>
                         </select>
                     </td>
                     <div id="gpu_price">
@@ -172,32 +175,16 @@ session_start();
                     <td>
                         <select class="form-control" name="storage" style="max-width:90%;" id="storage">
                             <option value="0">--</option>
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
+                            <option value="hdd512gb">512GB HDD</option>
+                            <option value="hdd1tb">1TB HDD</option>
+                            <option value="hdd2tb">2TB HDD</option>
+                            <option value="ssd256gb">256GB SSD</option>
+                            <option value="ssd512gb">512GB SSD</option>
+                            <option value="ssd1tb">1TB SSD</option>
+                            <option value="ssd2tb">2TB SSD</option>
                         </select>
                     </td>
                     <div id="storage_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
-                    </div>
-                </tr>
-                <tr class="components">
-                    <div class="form-group">
-                    <td scope="row" width="14%">Case</td>
-                    <td>
-                        <select class="form-control" name="case" style="max-width:90%;" id="cpu_case">
-                            <option value="0">--</option>
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
-                        </select>
-                    </td>
-                    <div id="cpu_case_price">
                         <td scope="row" width="30%">
                             <?= "test" ?>
                         </td>
@@ -210,32 +197,12 @@ session_start();
                     <td>
                         <select class="form-control" name="os" style="max-width:90%;" id="os">
                             <option value="0">--</option>
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
+                            <option value="windows10home">Windows 10 Home</option>
+                            <option value="windows10pro">Windows 10 Pro</option>
+                            <option value="dos">DOS</option>
                         </select>
                     </td>
                     <div id="os_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
-                    </div>
-                </tr>
-                <tr class="components">
-                    <div class="form-group">
-                    <td scope="row" width="14%">Case Accessories</td>
-                    <td>
-                        <select class="form-control" name="accessories" style="max-width:90%;" id="accessories">
-                            <option value="0">--</option>
-                            <option value="inteli7">Intel i7</option>
-                            <option value="inteli5">Intel i5</option>
-                            <option value="amdryzen5">AMD Ryzen 5</option>
-                            <option value="amdryzen7">AMD Ryzen 7</option>
-                        </select>
-                    </td>
-                    <div id="accessories_price">
                         <td scope="row" width="30%">
                             <?= "test" ?>
                         </td>
@@ -262,7 +229,7 @@ session_start();
     </div>
     </section>
     <footer>
-    <article class="bg-secondary">
+    <article class="bg-dark">
         <div class="card-body text-center">
             <p class="h5 text-white mt-4"><a class="text-white" href="/project/index.php">Compumeum</a></p>
             <p class="text-white">© 2020 All rights reserved.</p>
