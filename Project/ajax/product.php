@@ -5,14 +5,14 @@ $product = $_GET["product"];
 
 ?>
 
-<td scope="row" width="30%">
+<!-- <td scope="row" width="30%"> -->
     <?php
     if( $product != "0" ){
         if( $price[$product] == 0){
             echo "Free";
         }else{
-            echo $price[$product];
+            echo "Rp.".$price[$product];
         }
     }
     ?>
-</td>
+<!-- </td> -->

@@ -15,7 +15,7 @@ session_start();
 <body>
     <header>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md4 mb-3 bg-white border-bottom box-shadow">
-        <a class="card-body text-dark" href="/project/index.php"><h5 class="my-0 mr-md-auto font-weight-normal">Compumeum</h5></a>
+        <a class="card-body text-dark" href="/project/index.php"><h3 class="my-0 mr-md-auto font-weight-normal">Compumeum</h3></a>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="index.php">Home</a>
             <?php if( isset($_SESSION["user"]) ): ?>
@@ -30,11 +30,11 @@ session_start();
     <section class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-9 mx-auto">
+        <div class="col-md-auto mx-auto">
           <div class="row">
-            <div class="col-md-13">
+            <div class="col-md-14">
               <div class="card shadow-lg">
-                <div class="card-body">
+                <div class="card-body" style="width: 800px;">
                   <div class="filter-sidebar ">
                       <header class="">                      
                           <h3 class="display-4 text-center">Build a PC</h3>
@@ -56,8 +56,8 @@ session_start();
             <tbody>
                 <tr class="components">
                     <div class="form-group">
-                    <td scope="row" width="20%">Processor</td>
-                    <td>
+                    <td scope="row" width="30%">Processor</td>
+                    <td width="40%">
                         <select class="form-control" name="processor" style="max-width:90%;" id="processor">
                             <option value="0">--</option>
                             <option value="inteli7">Intel i7</option>
@@ -66,11 +66,8 @@ session_start();
                             <option value="amdryzen7">AMD Ryzen 7</option>
                         </select>
                     </td>
-                    <div id="cpu_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
+                    <td scope="row" width="20%" id="cpu_price">
+                    </td>
                     </div>
                 </tr>
                 <tr class="components">
@@ -84,11 +81,8 @@ session_start();
                             <option value="LiquidCooling">Liquid Cooling</option>
                         </select>
                     </td>
-                    <div id="cpu_cooler_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
+                    <td scope="row" width="30%" id="cpu_cooler_price">
+                    </td>
                     </div>
                 </tr>
                 <tr class="components">
@@ -103,11 +97,8 @@ session_start();
                             <option value="2000w">2000W</option>
                         </select>
                     </td>
-                    <div id="psu_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
+                    <td scope="row" width="30%" id="psu_price">
+                    </td>
                     </div>
                 </tr>
                 <tr class="components">
@@ -122,11 +113,8 @@ session_start();
                             <option value="EATX">E-ATX</option>
                         </select>
                     </td>
-                    <div id="motherboard_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
+                    <td scope="row" width="30%" id="motherboard_price">
+                    </td>
                     </div>
                 </tr>
                 <tr class="components">
@@ -141,11 +129,8 @@ session_start();
                             <option value="32gb">32GB</option>
                         </select>
                     </td>
-                    <div id="ram_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
+                    <td scope="row" width="30%" id="ram_price">
+                    </td>
                     </div>
                 </tr>
                 <tr class="components">
@@ -162,11 +147,8 @@ session_start();
                             <option value="radeon5700xt">Radeon RX5700XT</option>
                         </select>
                     </td>
-                    <div id="gpu_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
+                    <td scope="row" width="30%" id="gpu_price">
+                    </td>
                     </div>
                 </tr>
                 <tr class="components">
@@ -184,11 +166,8 @@ session_start();
                             <option value="ssd2tb">2TB SSD</option>
                         </select>
                     </td>
-                    <div id="storage_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
-                    </div>
+                    <td scope="row" width="30%" id="storage_price">
+                    </td>
                     </div>
                 </tr>
                 <tr class="components">
@@ -202,16 +181,9 @@ session_start();
                             <option value="dos">DOS</option>
                         </select>
                     </td>
-                    <div id="os_price">
-                        <td scope="row" width="30%">
-                            <?= "test" ?>
-                        </td>
+                    <td scope="row" width="30%" id="os_price">
+                    </td>
                     </div>
-                    </div>
-                </tr>
-                <tr class="total-price">
-                    <td>Total:</td>
-                    <td><?php echo $totalPrice ?></td>
                 </tr>
             </tbody>
         </table>
